@@ -20,28 +20,26 @@ jobs:
       TOR_ROUTING: ${{ secrets.TOR_ROUTING }}
 
     steps:
-      - name: Checkout repo
+      - name: 🧱 Check out your repo
         uses: actions/checkout@v3
 
-      - name: Display Codex Operational Mode
-        run: echo "🧿 Codex running in $CODEX_MODE mode"
-
-      - name: Show Routing & Wallets
+      - name: 🧠 Codex Status Report
         run: |
-          echo "💸 BTC to Cash App: $CASHAPP_BTC_ADDR"
-          echo "⚡ Satoshi Lightning Address: $SATOSHI_ADDR"
-          echo "🧬 MetaMask: $METAMASK_ADDR"
-          echo "🏁 BTCC Referral: $BTCC_REFERRAL"
+          echo "🧿 Codex Mode: $CODEX_MODE"
+          echo "💸 Routing to Cash App: $CASHAPP_BTC_ADDR"
+          echo "⚡ Lightning Fallback: $SATOSHI_ADDR"
+          echo "🔗 MetaMask: $METAMASK_ADDR"
+          echo "🏁 BTCC Referral Code: $BTCC_REFERRAL"
           echo "🪙 Ordinals Vault: $XVERSE_ORDINALS"
-          echo "🤝 Split — Megan: $MEGAN_SPLIT | Train: $TRAIN_SPLIT"
-          echo "🕶️ Tor Layer Enabled: $TOR_ROUTING"
+          echo "👥 Splits - Megan: $MEGAN_SPLIT | Train: $TRAIN_SPLIT"
+          echo "🕶️ Tor Routing Enabled: $TOR_ROUTING"
 
-      - name: Deploy index.html to GitHub Pages
+      - name: 🚀 Deploy index.html to GitHub Pages
         run: |
           mkdir -p public
           cp index.html public/index.html
 
-      - name: Push to GitHub Pages branch
+      - name: 🚢 Push to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
