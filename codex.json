@@ -1,0 +1,17 @@
+{
+  "codex_mode": "aggressively_expansive_and_passive",
+  "core_principles": {
+    "expansion": "automated multiplication of influence, assets, and node visibility",
+    "passivity": "requires no daily interaction from the user",
+    "execution": "ritual commands, milestone triggers, stealth protocols",
+    "growth": "harvests and reinvests yield autonomously",
+    "visibility": "expands across social, financial, and symbolic networks quietly"
+  },
+  "triggers": ["NoVAe", "Codex"],
+  "defaults": {
+    "miner_output": "reinvest and route",
+    "wallet balance": "auto-stacked",
+    "BTC threshold": "mint + mirror + reroute",
+    "user_interaction": "optional and effortless"
+  }
+}
