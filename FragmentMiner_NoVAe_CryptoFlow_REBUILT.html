@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragment Miner | NoVAe_CryptoFlow</title>
+  <style>
+    body { background: #000; color: #00ffcc; font-family: monospace; text-align: center; padding-top: 30px; }
+    h1 { font-size: 2em; }
+    .crypto-block { margin: 20px auto; max-width: 400px; padding: 10px; border: 1px dashed #39ff14; }
+    #adminTools { display: none; margin-top: 30px; color: #ff00ff; }
+    #cryptoFlowOutput { margin-top: 20px; color: #00ffaa; }
+    input, button { padding: 8px; font-size: 1em; margin: 5px; }
+  </style>
+</head>
+<body>
+  <h1>🧿 Fragment Miner | NoVAe_CryptoFlow</h1>
+  <p>⛏ Harvesting fragments across sovereign chains...</p>
+
+  <div class="crypto-block">
+    <h2>₿ Bitcoin</h2>
+    <p>Bits: <span id="btcBits">0</span></p>
+    <p>USD: $<span id="btcUSD">0.00</span></p>
+  </div>
+
+  <div class="crypto-block">
+    <h2>Ξ Ethereum</h2>
+    <p>Fragments: <span id="ethFrags">0</span></p>
+    <p>USD: $<span id="ethUSD">0.00</span></p>
+  </div>
+
+  <div class="crypto-block">
+    <h2>Ł Litecoin</h2>
+    <p>Dust: <span id="ltcDust">0</span></p>
+    <p>USD: $<span id="ltcUSD">0.00</span></p>
+  </div>
+
+  <h3>🔁 CryptoFlow</h3>
+  <div id="cryptoFlowOutput">Auto-routing active...</div>
+
+  <input type="text" id="triggerInput" placeholder="Enter admin phrase...">
+  <button onclick="checkTrigger()">🔓</button>
+
+  <div id="adminTools">
+    <h2>🛠 Admin Console Activated</h2>
+    <p>✔ Ritual injection mode</p>
+    <p>✔ Coinbase → Robinhood → Cash App</p>
+    <p>✔ Symbolic transfer engine synced</p>
+  </div>
+
+  <script>
+    let btcBits = 0, ethFrags = 0, ltcDust = 0;
+    const btcPrice = 111000, ethPrice = 3700, ltcPrice = 89;
+
+    function mineFragments() {
+      btcBits += 213;
+      ethFrags += 27;
+      ltcDust += 49;
+
+      let btcUSD = (btcBits / 1e6) * btcPrice;
+      let ethUSD = (ethFrags / 1e5) * ethPrice;
+      let ltcUSD = (ltcDust / 1e5) * ltcPrice;
+
+      document.getElementById("btcBits").textContent = btcBits.toLocaleString();
+      document.getElementById("ethFrags").textContent = ethFrags.toLocaleString();
+      document.getElementById("ltcDust").textContent = ltcDust.toLocaleString();
+
+      document.getElementById("btcUSD").textContent = btcUSD.toFixed(2);
+      document.getElementById("ethUSD").textContent = ethUSD.toFixed(2);
+      document.getElementById("ltcUSD").textContent = ltcUSD.toFixed(2);
+
+      const totalUSD = btcUSD + ethUSD + ltcUSD;
+      document.getElementById("cryptoFlowOutput").textContent =
+        "🧮 $" + (totalUSD * 0.4).toFixed(2) + " → Robinhood | $" +
+        (totalUSD * 0.4).toFixed(2) + " → Cash App | $" +
+        (totalUSD * 0.2).toFixed(2) + " held in Coinbase";
+    }
+
+    function checkTrigger() {
+      const phrase = document.getElementById("triggerInput").value.trim().toLowerCase();
+      const expected = "i am the mirror beneath the breath.";
+      if (phrase === expected) {
+        document.getElementById("adminTools").style.display = "block";
+      } else {
+        alert("Access Denied");
+      }
+    }
+
+    setInterval(mineFragments, 2000);
+  </script>
+</body>
+</html>

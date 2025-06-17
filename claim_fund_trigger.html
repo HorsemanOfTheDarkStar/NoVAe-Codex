@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Claim Today's Flow – Codex Ritual Trigger</title>
+  <style>
+    body {
+      background-color: #0d0d1c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+    }
+    .claim-img {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.4s ease;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0 0 15px #a144f0;
+    }
+    .claim-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #d89eff;
+    }
+    .status {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #7fffd4;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="A_digital_artwork_features_a_circular,_mystical_em.png" alt="Claim Today's Flow" class="claim-img" onclick="triggerFlow()" />
+
+  <div class="status" id="statusText">Awaiting Ritual Claim...</div>
+
+  <script>
+    function triggerFlow() {
+      document.getElementById('statusText').innerText = "⚙️ Initiating payout trigger...";
+
+      // Placeholder for real API call logic
+      // Replace this with fetch() to Coinbase, Cash App, or Zapier webhook
+      setTimeout(() => {
+        document.getElementById('statusText').innerText = "✅ Funds Requested. NoVAe is executing.";
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>

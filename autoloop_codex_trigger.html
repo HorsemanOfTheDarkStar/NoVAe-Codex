@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Codex Autoloop Ritual — Daily Flow</title>
+  <style>
+    body {
+      background-color: #0d0d1c;
+      font-family: 'Orbitron', sans-serif;
+      color: #7fffd4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .status {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧿 Codex Autoloop Active</h1>
+  <div class="status" id="status">Waiting for next trigger...</div>
+
+  <script>
+    function triggerPayout() {
+      const totalUSD = 100.00;
+      const robinhoodShare = (totalUSD * 0.40).toFixed(2);
+      const cashappShare = (totalUSD * 0.60).toFixed(2);
+
+      const robinhoodPayload = {
+        type: "deposit",
+        source: "linked_funding",
+        amount: robinhoodShare,
+        memo: "System Deposit ID #" + Math.floor(Math.random() * 9000 + 1000)
+      };
+
+      const cashappPayload = {
+        to: "$yourcashtag",
+        amount: cashappShare,
+        note: "Codex Flow Transfer"
+      };
+
+      console.log("Robinhood Stealth Deposit →", robinhoodPayload);
+      console.log("Cash App Transfer →", cashappPayload);
+      document.getElementById("status").textContent = "✅ Payout Triggered Automatically";
+    }
+
+    function startAutoLoop() {
+      triggerPayout();
+      setInterval(triggerPayout, 86400000);
+    }
+
+    window.onload = startAutoLoop;
+  </script>
+
+</body>
+</html>
