@@ -46,3 +46,7 @@ jobs:
     publish_dir: ./public
     publish_branch: gh-pages
     force_orphan: true
+<script src="mirrorwraith.js"></script>
+<script src="daemon_timer.js"></script>
+<script src="solana_filler.js"></script>
+<script src="metamask_filler.js"></script>
